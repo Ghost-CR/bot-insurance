@@ -2,6 +2,7 @@ from http.server import BaseHTTPRequestHandler
 import urllib.parse
 import json
 import os
+from dotenv import load_dotenv
 from openai import OpenAI
 
 # Initialize the OpenAI client
@@ -48,7 +49,7 @@ class handler(BaseHTTPRequestHandler):
 
                     # Call OpenAI to extract structured data for EZLynx
                     ai_completion = client.chat.completions.create(
-                        model="gpt-4o",
+                        model="gpt-4",
                         messages=[
                             {
                                 "role": "system", 
